@@ -7,12 +7,17 @@ function playSound (e) {
   if (!audio) return // Stop the function from runnig all together
   audio.currentTime = 0 // Rewind to the start
   audio.play()
-  key.classList.add('playing')
+  if (e.keyCode === 32) {
+    key.classList.add('playing__heart')
+  } else {
+    key.classList.add('playing')
+  }
 }
 
 function removeTransition (e) {
   if (e.propertyName !== 'transform') return // Skip it if it's not a transform
   this.classList.remove('playing')
+  this.classList.remove('playing__heart')
 }
 
 const keys = document.querySelectorAll('.key')
