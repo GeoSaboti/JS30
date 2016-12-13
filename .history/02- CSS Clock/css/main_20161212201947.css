@@ -46,6 +46,7 @@ body {
 
 .hour-hand {
   background-color: blueviolet;
+  width: 70%;
 }
 
 .min-hand {
